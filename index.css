@@ -83,15 +83,15 @@ ul {
   z-index: 0;
 }
 
-/* .offline .controller {
+.offline .controller {
   background: rgba(247, 247, 247, .1);
-  height: 100vh;
+  height: 220px;
   left: 0;
   position: absolute;
   top: 0;
   width: 100vw;
   z-index: 1;
-} */
+}
 
 .footer {
   width: 100%;
