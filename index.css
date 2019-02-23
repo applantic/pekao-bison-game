@@ -6,6 +6,10 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+a {
+  color: #f3fdfd;
+}
+
 html, body {
   padding: 0;
   margin: 0;
@@ -89,11 +93,13 @@ ul {
 }
 
 .footer {
-  display: flex
+  display: flex;
+  flex-direction: column;
 }
 
-.footer-logo {
+.footer-anchor {
   margin: auto;
+  margin-bottom: 20px
 }
 
 #offline-resources {
