@@ -2,6 +2,10 @@
  * Use of this source code is governed by a BSD-style license that can be
  * found in the LICENSE file. */
 
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
 html, body {
   padding: 0;
   margin: 0;
@@ -22,15 +26,15 @@ html, body {
   position: relative;
 }
 
-.hidden {
-  display: none;
-}
-
 .title {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 1rem;
+}
+
+.instruction {
+  max-width: 600px;
+  margin: auto;
 }
 
 /* Offline page */
@@ -52,7 +56,7 @@ html, body {
   max-width: 600px;
   overflow: hidden;
   position: absolute;
-  top: 80px;
+  top: 267px;
   width: 44px;
 }
 
@@ -89,7 +93,7 @@ html, body {
 }
 
 @media (max-width: 420px) {
-  .suggested-left > #control-buttons, .suggested-right > #control-buttons {
+  .suggested-left>#control-buttons, .suggested-right>#control-buttons {
     float: none;
   }
   .snackbar {
