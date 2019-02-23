@@ -71,6 +71,8 @@ ul {
   max-width: 590px;
   overflow: hidden;
   width: 44px;
+  top: 0;
+  position: absolute;
 }
 
 .offline .runner-canvas {
