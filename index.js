@@ -779,6 +779,10 @@
 
             this.tRex.update(100, Trex.status.CRASHED);
 
+            if (config.onGameOver) {
+                config.onGameOver(this.distanceMeter.getActualDistance(Math.ceil(this.distanceRan)));
+            }
+
             // Game over panel.
             if (!this.gameOverPanel) {
                 this.gameOverPanel = new GameOverPanel(this.canvas,
@@ -2707,9 +2711,67 @@
     };
 })();
 
-
 function onDocumentLoad() {
     new Runner('.interstitial-wrapper');
+
+    document.querySelector("#save").addEventListener('click', () => {
+        const name = document.querySelector("#username").value.slice(0, 20);
+        const score = document.querySelector("#score").innerHTML;
+    
+        if (name && score) {
+            saveScore({ name, score });
+        }
+    })
+
+    document.querySelector(".hide-ranking").addEventListener('click', (e) => {
+        document.querySelector(".ranking-container").classList.remove("visible");
+    })
+    
+    document.querySelector("#show-ranking").addEventListener('click', (e) => {
+        document.querySelector(".ranking-container").classList.add("visible");
+    })
 }
 
 document.addEventListener('DOMContentLoaded', onDocumentLoad);
+
+var config = {
+    onGameOver: function(score) {
+        console.log(score);
+        document.querySelector('#score').innerHTML = score;
+    }
+}
+
+function updateScoreBoard(data) {
+    const ranking = document.querySelector("#ranking");
+    let html = '';
+
+    data.users.forEach((user, i) => {
+        html += `
+            <li class="score">
+                <span>${i + 1}.  ${user.name}</span>
+                <span>${user.score}</span>
+            </li>
+        `;
+    })
+    
+    ranking.innerHTML = html;
+}
+
+function saveScore({ name, score }) {
+    fetch(`${API}/scoreboard`, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({ name, score: Number(score) })
+    })
+        .then(res => res.json())
+        .then(updateScoreBoard);
+}
+
+/* SCOREBOARD CODE */
+const API = "https://wt-429e742b12e26fd3d0a570f0b521551b-0.sandbox.auth0-extend.com/pekaocoders"
+
+fetch(`${API}/scoreboard`)
+    .then(res => res.json())
+    .then(updateScoreBoard);

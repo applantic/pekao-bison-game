@@ -13,8 +13,13 @@
 
 <body id="t" class="offline">
     <div id="messageBox" class="sendmessage">
-        <h1 class="title">BANK PEKAO - Bison Game</h1>
+        <h1 class="title">Zdobywaj punkty biegając Bizonem!</h1>
         <h3 class="title">Naciśnij dowolny przycisk aby zacząć!</h3>
+        
+        <ul class="instruction-list">
+                <li>🔼 skacz</li>
+                <li>🔽 kucnij</li>
+            </ul>
         <div class="niokbutton" onclick="okbuttonsend()"></div>
     </div>
     <div id="main-frame-error" class="interstitial-wrapper">
@@ -34,18 +39,26 @@
             </template>
         </div>
     </div>
-    <div class="instruction">
-        <p class="instruction__title">Instrukcja</p>
-        <ul>
-            <li>🔼 skacz</li>
-            <li>🔽 kucnij</li>
-        </ul>
+
+    <div>
+        <h2>Score: <span id="score"></span></h2>
+        <div class="flex-center">
+            <input id="username" class="nickinput" type="text" placeholder="Nick" />
+            <button id="save" class="save-btn">Zapisz rekord</button>
+        </div>
+        
+    </div>
+    <button id="show-ranking" class="save-btn rank-btn">Pokaż ranking</button>
+    <div class="ranking-container">
+        <div class="hide-ranking">UKRYJ</div>
+        <h3>RANKING:</h3>
+        <ul id="ranking"></ul>
     </div>
     <footer class="footer">
-        <a href="http://wemakebuttons.eu" target="_blank" class="footer-anchor">
-            <img src="assets/logo.jpg" alt="logo" width="200" height="200" />
+        <a href="http://wemakebuttons.eu" target="_blank" >
+            <img src="assets/logo.jpg" alt="logo" class="logo" />
         </a>
-        <a href="https://github.com/applantic/pekao-bison-game" target="_blank" class="footer-anchor">GitHub</a>
+        <a href="https://github.com/applantic/pekao-bison-game" target="_blank">GitHub</a>
     </footer>
 </body>
 
@@ -57,6 +70,7 @@
             box.style.visibility = "hidden";
         }
     };
+
 </script>
 
 </html>

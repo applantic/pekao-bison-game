@@ -4,6 +4,7 @@
 
 * {
   font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
 }
 
 a {
@@ -79,10 +80,10 @@ ul {
   overflow: hidden;
   position: absolute;
   top: 0;
-  z-index: 2;
+  z-index: 0;
 }
 
-.offline .controller {
+/* .offline .controller {
   background: rgba(247, 247, 247, .1);
   height: 100vh;
   left: 0;
@@ -90,16 +91,21 @@ ul {
   top: 0;
   width: 100vw;
   z-index: 1;
-}
+} */
 
 .footer {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #4248a0;
 }
 
-.footer-anchor {
-  margin: auto;
-  margin-bottom: 20px
+.logo {
+  width: 100px;
 }
 
 #offline-resources {
@@ -159,4 +165,113 @@ ul {
     overflow: inherit;
     padding: 0 8px;
   }
+}
+
+.title {
+  margin: 0;
+  padding: 8px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.rank-btn {
+  margin: 20px auto 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nickinput {
+  border: none;
+  width: 164px;
+  font-size: 14px;
+  display: block;
+  height: 40px;
+  padding: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.save-btn {
+  text-transform: uppercase;
+  display: block;
+  height: 40px;
+  font-weight: bold;
+  padding: 8px;
+  background: #ff8063;
+  color: white;
+  border: none;
+  font-size: 12px;
+}
+
+.instruction-list {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.instruction-list li:not(:last-of-type) {
+  margin-right: 10px;
+}
+
+.hide-ranking {
+  font-weight: bold;
+  background: #ff8063;
+  color: white;
+  padding: 8px;
+}
+
+.ranking-container {
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+.ranking-container.visible {
+  display: flex;
+}
+
+.score {
+  display: flex;
+  justify-content: space-between;
+}
+
+#ranking {
+  margin: 0;
+  padding: 0;
+  width: 80%;
+  max-width: 300px;
+}
+
+#ranking li:nth-child(1) {
+  font-size: 1.8rem;
+}
+
+#ranking li:nth-child(2) {
+  font-size: 1.6rem;
+}
+
+#ranking li:nth-child(3) {
+  font-size: 1.3rem;
 }
