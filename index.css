@@ -37,6 +37,14 @@ html, body {
   margin: auto;
 }
 
+.instruction__title {
+  margin: 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
 /* Offline page */
 
 .offline .interstitial-wrapper {
@@ -126,9 +134,6 @@ html, body {
 }
 
 @media (min-height: 240px) and (orientation: landscape) {
-  .offline .interstitial-wrapper {
-    margin-bottom: 90px;
-  }
   .icon-offline {
     margin-bottom: 20px;
   }
