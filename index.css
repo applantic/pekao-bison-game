@@ -34,6 +34,7 @@ html, body {
 .title {
   text-align: center;
   margin: 0;
+  margin-bottom: 8px;
   padding: 1rem;
 }
 
@@ -170,6 +171,7 @@ ul {
 
 .title {
   margin: 0;
+  margin-bottom: 8px;
   padding: 8px;
 }
 
@@ -179,6 +181,15 @@ h2 {
 
 .rank-btn {
   margin: 20px auto 0 auto;
+  background: none;
+  border: 2px solid #ff8063;;
+  text-transform: uppercase;
+  display: block;
+  height: 40px;
+  font-weight: bold;
+  padding: 8px;
+  color:  #ff8063;
+  font-size: 12px;
 }
 
 .flex {
@@ -258,11 +269,19 @@ h2 {
   justify-content: space-between;
 }
 
+@media only screen and (max-width: 600px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
 #ranking {
   margin: 0;
   padding: 0;
   width: 80%;
   max-width: 300px;
+  max-height: 70vh;
+  overflow: scroll;
 }
 
 #ranking li:nth-child(1) {

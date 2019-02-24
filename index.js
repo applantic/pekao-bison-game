@@ -2716,7 +2716,7 @@ function onDocumentLoad() {
 
     document.querySelector("#save").addEventListener('click', () => {
         const name = document.querySelector("#username").value.slice(0, 20);
-        const score = document.querySelector("#score").innerHTML;
+        const score = window.USER_SCORE;
     
         if (name && score) {
             saveScore({ name, score });
@@ -2736,7 +2736,7 @@ document.addEventListener('DOMContentLoaded', onDocumentLoad);
 
 var config = {
     onGameOver: function(score) {
-        console.log(score);
+        window.USER_SCORE = score;
         document.querySelector('#score').innerHTML = score;
     }
 }
