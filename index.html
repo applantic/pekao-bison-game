@@ -9,9 +9,11 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <script src="index.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135007668-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'UA-135007668-1');
     </script>
@@ -20,11 +22,11 @@
 <body id="t" class="offline">
     <div id="messageBox" class="sendmessage">
         <h1 class="title">Biegaj Żubrem! Wygrywaj Nagrody!</h1>
-        
+
         <ul class="instruction-list hide-on-mobile">
-                <li>🔼 skacz</li>
-                <li>🔽 kucnij</li>
-            </ul>
+            <li>🔼 skacz</li>
+            <li>🔽 kucnij</li>
+        </ul>
         <div class="niokbutton" onclick="okbuttonsend()"></div>
     </div>
     <div id="main-frame-error" class="interstitial-wrapper">
@@ -51,7 +53,7 @@
             <input id="username" class="nickinput" type="text" placeholder="Nick" />
             <button id="save" class="save-btn">Zapisz wynik</button>
         </div>
-        
+
     </div>
     <button id="show-ranking" class="rank-btn">Pokaż ranking</button>
     <div class="ranking-container">
@@ -60,7 +62,7 @@
         <ul id="ranking"></ul>
     </div>
     <footer class="footer">
-        <a href="http://wemakebuttons.eu" target="_blank" >
+        <a href="http://wemakebuttons.eu" target="_blank">
             <img src="assets/logo.jpg" alt="logo" class="logo" />
         </a>
         <a href="https://github.com/applantic/pekao-bison-game" target="_blank">GitHub</a>
